@@ -14,6 +14,8 @@
 		DEBE726E29D2E2A000DC8651 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBE726C29D2E2A000DC8651 /* LaunchScreen.storyboard */; };
 		DEBE727729D2E5F200DC8651 /* RestaurantCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE727629D2E5F200DC8651 /* RestaurantCellData.swift */; };
 		DEBE727929D2E60E00DC8651 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE727829D2E60E00DC8651 /* Restaurants.swift */; };
+		DEBE727B29D2E69400DC8651 /* UIColor+imageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE727A29D2E69400DC8651 /* UIColor+imageWithColor.swift */; };
+		DEBE727D29D2E6B700DC8651 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE727C29D2E6B700DC8651 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		DEBE727529D2E30F00DC8651 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		DEBE727629D2E5F200DC8651 /* RestaurantCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCellData.swift; sourceTree = "<group>"; };
 		DEBE727829D2E60E00DC8651 /* Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
+		DEBE727A29D2E69400DC8651 /* UIColor+imageWithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+imageWithColor.swift"; sourceTree = "<group>"; };
+		DEBE727C29D2E6B700DC8651 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				DEBE726529D2E29F00DC8651 /* ViewController.swift */,
 				DEBE727629D2E5F200DC8651 /* RestaurantCellData.swift */,
 				DEBE727829D2E60E00DC8651 /* Restaurants.swift */,
+				DEBE727A29D2E69400DC8651 /* UIColor+imageWithColor.swift */,
+				DEBE727C29D2E6B700DC8651 /* TableViewCell.swift */,
 				DEBE726A29D2E2A000DC8651 /* Assets.xcassets */,
 				DEBE726C29D2E2A000DC8651 /* LaunchScreen.storyboard */,
 				DEBE726F29D2E2A000DC8651 /* Info.plist */,
@@ -143,9 +149,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEBE727929D2E60E00DC8651 /* Restaurants.swift in Sources */,
+				DEBE727B29D2E69400DC8651 /* UIColor+imageWithColor.swift in Sources */,
 				DEBE726629D2E29F00DC8651 /* ViewController.swift in Sources */,
 				DEBE726229D2E29F00DC8651 /* AppDelegate.swift in Sources */,
 				DEBE727729D2E5F200DC8651 /* RestaurantCellData.swift in Sources */,
+				DEBE727D29D2E6B700DC8651 /* TableViewCell.swift in Sources */,
 				DEBE726429D2E29F00DC8651 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
