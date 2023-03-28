@@ -16,6 +16,7 @@
 		DEBE727929D2E60E00DC8651 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE727829D2E60E00DC8651 /* Restaurants.swift */; };
 		DEBE727B29D2E69400DC8651 /* UIColor+imageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE727A29D2E69400DC8651 /* UIColor+imageWithColor.swift */; };
 		DEBE727D29D2E6B700DC8651 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE727C29D2E6B700DC8651 /* TableViewCell.swift */; };
+		DEBE727F29D2E73A00DC8651 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE727E29D2E73A00DC8651 /* TableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		DEBE727829D2E60E00DC8651 /* Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
 		DEBE727A29D2E69400DC8651 /* UIColor+imageWithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+imageWithColor.swift"; sourceTree = "<group>"; };
 		DEBE727C29D2E6B700DC8651 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DEBE727E29D2E73A00DC8651 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				DEBE727829D2E60E00DC8651 /* Restaurants.swift */,
 				DEBE727A29D2E69400DC8651 /* UIColor+imageWithColor.swift */,
 				DEBE727C29D2E6B700DC8651 /* TableViewCell.swift */,
+				DEBE727E29D2E73A00DC8651 /* TableViewDataSource.swift */,
 				DEBE726A29D2E2A000DC8651 /* Assets.xcassets */,
 				DEBE726C29D2E2A000DC8651 /* LaunchScreen.storyboard */,
 				DEBE726F29D2E2A000DC8651 /* Info.plist */,
@@ -150,6 +153,7 @@
 			files = (
 				DEBE727929D2E60E00DC8651 /* Restaurants.swift in Sources */,
 				DEBE727B29D2E69400DC8651 /* UIColor+imageWithColor.swift in Sources */,
+				DEBE727F29D2E73A00DC8651 /* TableViewDataSource.swift in Sources */,
 				DEBE726629D2E29F00DC8651 /* ViewController.swift in Sources */,
 				DEBE726229D2E29F00DC8651 /* AppDelegate.swift in Sources */,
 				DEBE727729D2E5F200DC8651 /* RestaurantCellData.swift in Sources */,
