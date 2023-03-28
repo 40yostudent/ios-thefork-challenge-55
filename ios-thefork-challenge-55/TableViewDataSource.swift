@@ -20,7 +20,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.restaurantCellList.count > 0) ? self.restaurantCellList.count : 0
+        return self.restaurantCellList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
