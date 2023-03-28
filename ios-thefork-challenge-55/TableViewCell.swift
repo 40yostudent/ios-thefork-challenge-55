@@ -1,8 +1,11 @@
 import UIKit
+import Combine
 
 class TableViewCell: UITableViewCell {
     
     static var identifier = "thereisonlyonecelltype"
+    
+    var fetchImagesList: AnyCancellable?
     
     weak var coverView: UIImageView!
     weak var titleLabel: UILabel!
@@ -40,6 +43,8 @@ class TableViewCell: UITableViewCell {
         self.addressLabel.text = ""
         self.ratingLabel.text = ""
         self.favourite = false
+        
+        self.fetchImagesList?.cancel()
     }
 
     func setupView() {

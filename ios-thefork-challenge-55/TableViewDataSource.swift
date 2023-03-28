@@ -6,7 +6,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
     weak var tableView: UITableView!
     
     var fetchRestaurantsList: AnyCancellable?
-    var fetchImagesList: AnyCancellable?
+//    var fetchImagesList: AnyCancellable?
     
     var restaurants = Restaurants(data: [])
     var restaurantCellList: [RestaurantCellData] = []
@@ -28,7 +28,15 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
         if restaurantCellList.count > 0 { // if data are loaded
             let restaurantForCell = restaurantCellList[indexPath.row]
             
-            cell.coverView.image = fetchImage(from: restaurantForCell.imageUrl)
+            if let image = imageCache[restaurantForCell.imageUrl] {
+                cell.coverView.image = image
+            } else if let url = URL(string: restaurantForCell.imageUrl) {
+                cell.fetchImagesList = fetchImage(from: url)
+            } else {
+                cell.coverView.image = UIColor.gray.imageWithColor(width: 1, height: 1)
+            }
+            
+//            cell.coverView.image = fetchImage(from: restaurantForCell.imageUrl)
             cell.titleLabel.text = restaurantForCell.name
             cell.addressLabel.text = restaurantForCell.address
             cell.ratingLabel.text = restaurantForCell.rating.description
@@ -70,31 +78,24 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
             })
     }
     
-    func fetchImage(from string: String) -> UIImage {
-        if let url = URL(string: string) {
+    func fetchImage(from url: URL) -> AnyCancellable {
             
-            if let image = imageCache[string] {
-                return image
-            } else {
-                self.fetchImagesList = URLSession.shared.dataTaskPublisher(for: url)
-                    .map { UIImage(data: $0.data) }
-                    .replaceError(with: UIColor.gray.imageWithColor(width: 1, height: 1))
-                    .receive(on: RunLoop.main)
-                    .retry(1)
-                    .sink(receiveCompletion: { completion in
-                        switch completion {
-                        case .finished:
-                            break
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                        }
-                    }, receiveValue: { value in
-                        if let value = value {
-                            self.imageCache[string] = value
-                        }
-                    })
-            }
-        }
-        return imageCache[string] ?? UIColor.gray.imageWithColor(width: 1, height: 1)
+            return URLSession.shared.dataTaskPublisher(for: url)
+                .map { UIImage(data: $0.data) }
+                .replaceError(with: UIColor.gray.imageWithColor(width: 1, height: 1))
+                .receive(on: RunLoop.main)
+                .retry(1)
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }, receiveValue: { value in
+                    if let value = value {
+                        self.imageCache[url.absoluteString] = value
+                    }
+                })
     }
 }
