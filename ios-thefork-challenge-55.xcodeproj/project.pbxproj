@@ -24,6 +24,7 @@
 		DEBE726A29D2E2A000DC8651 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEBE726D29D2E2A000DC8651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEBE726F29D2E2A000DC8651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEBE727529D2E30F00DC8651 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		DEBE726029D2E29F00DC8651 /* ios-thefork-challenge-55 */ = {
 			isa = PBXGroup;
 			children = (
+				DEBE727529D2E30F00DC8651 /* .gitignore */,
 				DEBE726129D2E29F00DC8651 /* AppDelegate.swift */,
 				DEBE726329D2E29F00DC8651 /* SceneDelegate.swift */,
 				DEBE726529D2E29F00DC8651 /* ViewController.swift */,
