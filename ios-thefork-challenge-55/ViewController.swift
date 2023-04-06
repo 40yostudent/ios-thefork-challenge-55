@@ -12,6 +12,7 @@ class ViewController: UIViewController {
         self.tableView = {
             let this = UITableView(frame: .zero, style: .plain)
             this.translatesAutoresizingMaskIntoConstraints = false
+            this.rowHeight = 256
             self.view.addSubview(this)
             
             NSLayoutConstraint.activate([
