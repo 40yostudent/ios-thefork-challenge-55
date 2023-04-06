@@ -6,14 +6,13 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
     weak var tableView: UITableView!
     
     var fetchRestaurantsList: AnyCancellable?
-//    var fetchImagesList: AnyCancellable?
     
     var restaurants = Restaurants(data: [])
     var restaurantCellList: [RestaurantCellData] = []
     
     var imageCache: [String : UIImage] = [:] {
         didSet {
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [unowned self] in
                 self.tableView.reloadData()
             }
         }
@@ -31,12 +30,11 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
             if let image = imageCache[restaurantForCell.imageUrl] {
                 cell.coverView.image = image
             } else if let url = URL(string: restaurantForCell.imageUrl) {
-                cell.fetchImagesList = fetchImage(from: url)
+                cell.fetchImageCancellable = fetchImage(from: url)
             } else {
                 cell.coverView.image = UIColor.gray.imageWithColor(width: 1, height: 1)
             }
             
-//            cell.coverView.image = fetchImage(from: restaurantForCell.imageUrl)
             cell.titleLabel.text = restaurantForCell.name
             cell.addressLabel.text = restaurantForCell.address
             cell.ratingLabel.text = restaurantForCell.rating.description
@@ -54,7 +52,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
             .replaceError(with: Restaurants(data: []))
             .eraseToAnyPublisher()
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [unowned self] completion in
                 switch completion {
                 case .finished:
                     for restaurant in self.restaurants.data {
@@ -92,7 +90,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
-                }, receiveValue: { value in
+                }, receiveValue: { [unowned self] value in
                     if let value = value {
                         self.imageCache[url.absoluteString] = value
                     }

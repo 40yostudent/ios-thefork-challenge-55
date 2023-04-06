@@ -5,7 +5,7 @@ class TableViewCell: UITableViewCell {
     
     static var identifier = "thereisonlyonecelltype"
     
-    var fetchImagesList: AnyCancellable?
+    var fetchImageCancellable: Cancellable?
     
     weak var coverView: UIImageView!
     weak var titleLabel: UILabel!
@@ -39,12 +39,9 @@ class TableViewCell: UITableViewCell {
         super.prepareForReuse()
 
         self.coverView.image = UIColor.gray.imageWithColor(width: 1, height: 1)
-        self.titleLabel.text = ""
-        self.addressLabel.text = ""
-        self.ratingLabel.text = ""
         self.favourite = false
         
-        self.fetchImagesList?.cancel()
+        self.fetchImageCancellable?.cancel()
     }
 
     func setupView() {
